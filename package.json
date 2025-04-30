@@ -1,0 +1,11 @@
+{
+  "name": "breathing-app",
+  "version": "1.0.0",
+  "description": "4-7-8 Breathing Exercise App",
+  "scripts": {
+    "start": "http-server -c-1 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
