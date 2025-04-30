@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Exercise App</title>
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="4-7-8 Breathing Exercise App">
+    <meta property="og:description" content="A web application designed to guide users through the 4-7-8 breathing technique, helping reduce anxiety and promote better sleep.">
+    <meta property="og:image" content="assets/images/thumbnail.jpg">
+    <meta property="og:url" content="https://patrickcmserrano.github.io/breathing-app/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4-7-8 Breathing Exercise App">
+    <meta name="twitter:description" content="A web application designed to guide users through the 4-7-8 breathing technique, helping reduce anxiety and promote better sleep.">
+    <meta name="twitter:image" content="assets/images/thumbnail.jpg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="theme-switch">
+        <button id="theme-toggle" class="contrast" aria-label="Switch theme">Switch to dark mode</button>
+    </div>
+    <nav class="container">
+        <ul>
+            <li><strong>Home</strong></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="copyright.html">Copyright</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <article>
+            <header>
+                <h1>4-7-8 Breathing Exercise</h1>
+                <p>The 4-7-8 breathing technique is a relaxation exercise. Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat 4 times.</p>
+            </header>
+            <div id="instruction" aria-live="polite">Press start to begin</div>
+            <div id="cycle-counter" aria-live="polite">Cycle: 0/4</div>
+            <div class="control-buttons">
+                <button id="start" class="primary">Start</button>
+                <button id="stop" class="contrast" disabled>Stop</button>
+            </div>
+            <div id="progress"></div>
+        </article>
+    </main>
+    <footer class="music-player">
+        <div class="sound-controls grid">
+            <label for="background-sound">Background Sound:</label>
+            <select id="background-sound">
+                <option value="">None</option>
+                <option value="meditation-spiritual-music">Meditation Spiritual Music</option>
+                <option value="middle-east-oriental-music">Middle East Oriental Music</option>
+                <option value="round-of-fairies-quot-irish-harp">Irish Harp</option>
+                <option value="the-voice-of-the-oud">Voice of the Oud</option>
+                <option value="tibetan-singing-bowl">Tibetan Singing Bowl</option>
+            </select>
+            <div class="button-group">
+                <button id="play-sound" class="secondary" disabled>Play</button>
+                <button id="pause-sound" class="secondary" disabled>Pause</button>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

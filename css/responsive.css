@@ -1,0 +1,60 @@
+@media (max-width: 576px) {
+    nav.container {
+        margin: 0.5rem auto;
+        max-width: 90%;
+    }
+    
+    nav ul {
+        gap: 0.5rem;
+    }
+    
+    nav a, nav strong {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+        width: 100%;
+    }
+    
+    article {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .content-page {
+        padding-bottom: 160px;
+    }
+    
+    #instruction {
+        font-size: 1.2em;
+    }
+    
+    .sound-controls {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .button-group {
+        justify-content: center;
+    }
+    
+    main.container {
+        min-height: calc(100vh - 260px);
+    }
+    
+    .attribution {
+        bottom: 120px;
+    }
+    
+    .music-player {
+        padding: 0.75rem;
+    }
+    
+    select, button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
