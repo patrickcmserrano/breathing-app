@@ -20,7 +20,7 @@ export class AudioPlayer {
             this.backgroundMusic = null;
         }
         if (soundName) {
-            this.backgroundMusic = new Audio(`sounds/${soundName}.mp3`);
+            this.backgroundMusic = new Audio(`assets/sounds/${soundName}.mp3`);
             this.backgroundMusic.loop = true;
             this.playButton.disabled = false;
             this.pauseButton.disabled = true;

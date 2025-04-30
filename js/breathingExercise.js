@@ -5,7 +5,7 @@ export class BreathingExercise {
         this.progress = document.getElementById('progress');
         this.stopButton = document.getElementById('stop');
         this.cycleCounter = document.getElementById('cycle-counter');
-        this.bell = new Audio('sounds/tibetan-singing-bowl.mp3');
+        this.bell = new Audio('assets/sounds/tibetan-singing-bowl.mp3');
         
         this.cycle = [
             { text: 'Inhale for 4 seconds', duration: 4, sound: true },
