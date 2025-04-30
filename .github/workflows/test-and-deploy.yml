@@ -34,6 +34,17 @@ jobs:
       with:
         name: coverage-report
         path: coverage/
+
+    - name: Commit package-lock.json if changed
+      if: github.event_name == 'push' && matrix.node-version == '18.x'
+      run: |
+        if [[ -n $(git status --porcelain package-lock.json) ]]; then
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add package-lock.json
+          git commit -m "chore: update package-lock.json"
+          git push
+        fi
       
   deploy:
     needs: test
