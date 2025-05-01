@@ -15,13 +15,17 @@ export class BreathingExercise {
         this.totalCycles = 4;
         this.phases = Array(this.totalCycles).fill(this.cycle).flat();
         this.currentPhaseIndex = 0;
+        this.animationFrame = null;
+        this.phaseTimer = null;
 
         this.initialize();
     }
 
     initialize() {
         this.instruction.style.transition = 'color 0.3s';
+        this.progress.style.transform = 'translateZ(0)'; // Force hardware acceleration
         this.progress.addEventListener('transitionend', () => this.handlePhaseEnd());
+        this.progress.addEventListener('transitioncancel', () => this.reset()); // Reset on cancelled transitions
         this.startButton.addEventListener('click', () => this.start());
         this.stopButton.addEventListener('click', () => this.reset());
     }
@@ -31,6 +35,19 @@ export class BreathingExercise {
     }
 
     reset() {
+        // Clear any pending animations
+        if (this.animationFrame) {
+            cancelAnimationFrame(this.animationFrame);
+            this.animationFrame = null;
+        }
+        
+        // Clear any pending timers
+        if (this.phaseTimer) {
+            clearTimeout(this.phaseTimer);
+            this.phaseTimer = null;
+        }
+
+        // Reset UI state
         this.instruction.textContent = 'Press start to begin';
         this.progress.style.width = '0';
         this.progress.style.transition = 'none';
@@ -46,17 +63,34 @@ export class BreathingExercise {
         this.instruction.style.transition = `color ${phase.duration}s`;
         this.stopButton.disabled = false;
         
-        requestAnimationFrame(() => {
+        // Cancel any existing animation frames
+        if (this.animationFrame) {
+            cancelAnimationFrame(this.animationFrame);
+        }
+        
+        const startAnimation = () => {
             this.progress.style.width = '0';
             this.progress.style.transition = 'none';
-            requestAnimationFrame(() => {
+            
+            this.animationFrame = requestAnimationFrame(() => {
                 this.progress.style.transition = `width ${phase.duration}s linear`;
                 this.progress.style.width = '100%';
+                
+                // Fallback timer in case transition events fail
+                this.phaseTimer = setTimeout(() => {
+                    if (this.currentPhaseIndex === index) {
+                        this.handlePhaseEnd();
+                    }
+                }, phase.duration * 1000 + 100);
             });
-        });
+        };
+        
+        this.animationFrame = requestAnimationFrame(startAnimation);
         
         if (phase.sound) {
-            this.bell.play();
+            this.bell.play().catch(() => {
+                console.log('Sound playback failed - continuing without sound');
+            });
         }
 
         this.cycleCounter.textContent = `Cycle: ${this.getCurrentCycle()}/${this.totalCycles}`;
