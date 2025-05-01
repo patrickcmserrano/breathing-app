@@ -3,56 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copyright Information - Breathing Exercise App</title>
+    <title data-i18n="copyright_title">Copyright Information</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="language-selector">
+        <div class="language-buttons">
+            <button class="language-button" data-lang="en">English</button>
+            <button class="language-button" data-lang="pt-BR">Português</button>
+        </div>
+    </div>
     <div class="theme-switch">
-        <button id="theme-toggle" class="contrast" aria-label="Switch theme">Switch to dark mode</button>
+        <button id="theme-toggle" class="contrast" aria-label="Switch theme" data-i18n="switch_theme">Switch to dark mode</button>
     </div>
     <nav class="container">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><strong>Copyright</strong></li>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About</a></li>
+            <li><strong data-i18n="nav_copyright">Copyright</strong></li>
         </ul>
     </nav>
     <main class="container content-page">
         <article>
             <header>
-                <h1>Copyright Information</h1>
+                <h1 data-i18n="copyright_title">Copyright Information</h1>
             </header>
             <section>
-                <h2>Copyright Attribution for Pixabay Audio</h2>
-                <h3>Pixabay License Overview</h3>
-                <p>Audio files obtained from Pixabay, such as meditation tracks, harp, oud, or Tibetan bowl sounds, are licensed under the Pixabay License. This license allows free use of content for commercial and non-commercial purposes, with the following main conditions:</p>
-                
-                <h4>Free Use</h4>
-                <p>You can use, modify, and distribute the audio files in projects such as applications, videos, or websites (including your application hosted on GitHub Pages) without paying royalties.</p>
-                
-                <h4>Attribution Not Required</h4>
-                <p>The Pixabay license does not require attribution to the author or Pixabay, except in specific cases where the author requests credit (verified on the audio page).</p>
-                
-                <h4>Restrictions</h4>
+                <h3 data-i18n="important_notes">Important Notes</h3>
                 <ul>
-                    <li>You cannot resell the audio files as standalone products (e.g., selling them as individual music tracks).</li>
-                    <li>The audio files may not be used in contexts that violate laws or are considered offensive.</li>
-                    <li>Some audio files may have additional restrictions specified on the download page (e.g., non-commercial use only).</li>
+                    <li data-i18n="note_1">Attribution is not required but appreciated.</li>
+                    <li data-i18n="note_2">You can use the audio files in commercial and non-commercial projects.</li>
+                    <li data-i18n="note_3">You cannot resell or redistribute the audio files.</li>
+                    <li data-i18n="note_4">Some audio files may have additional restrictions specified on the download page (e.g., non-commercial use only).</li>
                 </ul>
                 
-                <h3>Audio Tracks Used in This Project</h3>
+                <h3 data-i18n="audio_tracks">Audio Tracks Used in This Project</h3>
                 <ul>
-                    <li>"Meditation Spiritual Music"</li>
-                    <li>"Middle East Oriental Music"</li>
-                    <li>"Round of Fairies (Irish Harp)"</li>
-                    <li>"The Voice of the Oud"</li>
-                    <li>"Tibetan Singing Bowl"</li>
+                    <li data-i18n="meditation_music">Meditation Spiritual Music</li>
+                    <li data-i18n="oriental_music">Middle East Oriental Music</li>
+                    <li data-i18n="irish_harp">Irish Harp</li>
+                    <li data-i18n="oud">Voice of the Oud</li>
+                    <li data-i18n="tibetan_bowl">Tibetan Singing Bowl</li>
                 </ul>
                 
-                <p>All audio tracks are provided by <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a> under the Pixabay License.</p>
-                <p>For full license details, visit the <a href="https://pixabay.com/service/terms/" target="_blank" rel="noopener">Pixabay Terms of Service</a>.</p>
+                <p>
+                    <span data-i18n="audio_attribution">All audio tracks are provided by</span> 
+                    <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a>.
+                </p>
+                <p>
+                    <span data-i18n="license_details">For full license details, visit the</span> 
+                    <a href="https://pixabay.com/service/terms/" target="_blank" rel="noopener" data-i18n="pixabay_tos">Pixabay Terms of Service</a>.
+                </p>
             </section>
         </article>
     </main>

@@ -64,7 +64,7 @@ p {
     height: 10px;
     background-color: var(--progress-color);
     margin-top: 20px;
-    transition: width 0s linear;
+    transition: width 0.3s linear;
     border-radius: var(--border-radius);
 }
 
@@ -198,4 +198,63 @@ nav strong {
     color: var(--primary);
     padding: 0.25rem 0.75rem;
     font-size: 0.95rem;
+}
+
+.language-selector {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--card-background-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+}
+
+.language-selector select {
+    padding: 0.25rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    background: var(--card-background-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.language-button {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    background: var(--card-background-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.language-button.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.language-button:hover:not(.active) {
+    background-color: var(--primary-hover);
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .language-selector {
+        top: auto;
+        bottom: 160px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
 }

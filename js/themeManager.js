@@ -1,4 +1,6 @@
-export function initializeTheme() {
+import { LanguageManager } from './languageManager.js';
+
+export function initializeTheme(languageManager = new LanguageManager()) {
     const themeToggle = document.getElementById('theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -10,8 +12,10 @@ export function initializeTheme() {
         } else {
             localStorage.setItem('theme', theme);
         }
-        themeToggle.textContent = `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`;
-        themeToggle.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`);
+        const oppositeTheme = theme === 'light' ? 'dark' : 'light';
+        const translatedTheme = languageManager.getText(oppositeTheme);
+        themeToggle.textContent = languageManager.getText('switch_theme', translatedTheme);
+        themeToggle.setAttribute('aria-label', languageManager.getText('switch_theme', translatedTheme));
     }
 
     // Load saved theme or use system preference
