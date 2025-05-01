@@ -28,9 +28,9 @@ const translations = {
         pause: "Pause",
 
         // Theme
-        switch_theme: "Switch to {0} mode",
-        dark: "dark",
-        light: "light",
+        switch_theme: "🌓",
+        dark: "🌙",
+        light: "☀️",
 
         // About page
         about_title: "About This Project",
@@ -93,9 +93,9 @@ const translations = {
         pause: "Pausar",
 
         // Theme
-        switch_theme: "Mudar para modo {0}",
-        dark: "escuro",
-        light: "claro",
+        switch_theme: "🌓",
+        dark: "🌙",
+        light: "☀️",
 
         // About page
         about_title: "Sobre Este Projeto",
