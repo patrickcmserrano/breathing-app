@@ -18,27 +18,38 @@
     <meta name="twitter:description" content="A web application designed to guide users through the 4-7-8 breathing technique, helping reduce anxiety and promote better sleep.">
     <meta name="twitter:image" content="https://patrickcmserrano.github.io/breathing-app/assets/images/thumbnail.jpg">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
     <div class="background-animation"></div>
-    <div class="language-selector">
+    
+    
+    <div class="menu grid">
         <div class="language-buttons">
-            <button class="language-button" data-lang="en">English</button>
-            <button class="language-button" data-lang="pt-BR">Português</button>
+            <button class="language-button" data-lang="en">En-US</button>
+            <button class="language-button" data-lang="pt-BR">Pt-BR</button>
+        </div>
+        <div  class="menu">
+            <nav>
+                <ul>
+                    <li><strong data-i18n="nav_home">Home</strong></li>
+                    <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                    <li><a href="copyright.html" data-i18n="nav_copyright">Copyright</a></li>
+                </ul>
+            </nav>  
+        </div>
+        <div class="theme-switch">
+            <button id="theme-toggle"  aria-label="Switch theme" data-i18n="switch_theme">Switch to dark mode</button>
         </div>
     </div>
-    <div class="theme-switch">
-        <button id="theme-toggle" class="contrast" aria-label="Switch theme" data-i18n="switch_theme">Switch to dark mode</button>
-    </div>
-    <nav class="container">
-        <ul>
-            <li><strong data-i18n="nav_home">Home</strong></li>
-            <li><a href="about.html" data-i18n="nav_about">About</a></li>
-            <li><a href="copyright.html" data-i18n="nav_copyright">Copyright</a></li>
-        </ul>
-    </nav>
+
     <main class="container">
         <article>
             <header>
@@ -54,6 +65,15 @@
             <div id="progress"></div>
         </article>
     </main>
+
+
+    <button class="music-toggle" aria-label="Toggle music player">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="21" cy="16" r="3"></circle>
+        </svg>
+    </button>
     <footer class="music-player">
         <div class="sound-controls grid">
             <label for="background-sound" data-i18n="background_sound">Background Sound:</label>

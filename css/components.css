@@ -116,13 +116,17 @@ p {
 }
 
 .theme-switch {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
     z-index: 1000;
 }
 
 .theme-switch button {
+    width: 4rem;
+    height: 4rem;
     background: var(--card-background-color);
     color: var(--text-color);
     border: 1px solid var(--primary);
@@ -137,6 +141,10 @@ p {
     background-color: var(--primary);
     color: white;
     border-color: var(--primary-hover);
+}
+
+.menu {
+    z-index: 1000;
 }
 
 .attribution {
@@ -159,31 +167,41 @@ p {
     max-width: 800px;
 }
 
+nav { display: block; }
+
 nav.container {
-    padding: 0.5rem;
-    margin: 1rem auto;
     background: var(--card-background-color);
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 2;
-    max-width: 400px;
     border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    padding: 0.5rem 1rem;
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    margin: 0 0.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, color 0.3s;
+}
+nav ul li:hover {
+    background-color: var(--primary-hover);
+    color: white;
 }
 
 nav a {
     color: var(--text-color);
     text-decoration: none;
-    padding: 0.25rem 0.75rem;
     border-radius: var(--border-radius);
     transition: background-color 0.3s, color 0.3s;
     font-size: 0.95rem;
@@ -201,17 +219,13 @@ nav strong {
 }
 
 .language-selector {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
     z-index: 1000;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background: var(--card-background-color);
     padding: 0.5rem;
     border-radius: var(--border-radius);
-    border: 1px solid var(--primary);
 }
 
 .language-selector select {
@@ -226,10 +240,11 @@ nav strong {
 .language-buttons {
     display: flex;
     gap: 0.25rem;
+    z-index: 1000;
 }
 
 .language-button {
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.5rem;
     border-radius: var(--border-radius);
     border: 1px solid var(--primary);
     background: var(--card-background-color);
@@ -237,6 +252,9 @@ nav strong {
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    min-width: min-content;
+    width: auto;
+    white-space: nowrap;
 }
 
 .language-button.active {
@@ -257,4 +275,8 @@ nav strong {
         transform: translateX(-50%);
         white-space: nowrap;
     }
+}
+
+.menu.grid {
+    padding: 1rem;
 }

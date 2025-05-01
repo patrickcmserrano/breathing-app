@@ -36,7 +36,7 @@ main.container {
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     position: relative;
     z-index: 1;
