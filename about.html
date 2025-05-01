@@ -3,45 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Breathing Exercise App</title>
+    <title data-i18n="about_title">About - Breathing Exercise App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="language-selector">
+        <div class="language-buttons">
+            <button class="language-button" data-lang="en">English</button>
+            <button class="language-button" data-lang="pt-BR">Português</button>
+        </div>
+    </div>
     <div class="theme-switch">
-        <button id="theme-toggle" class="contrast" aria-label="Switch theme">Switch to dark mode</button>
+        <button id="theme-toggle" class="contrast" aria-label="Switch theme" data-i18n="switch_theme">Switch to dark mode</button>
     </div>
     <nav class="container">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><strong>About</strong></li>
-            <li><a href="copyright.html">Copyright</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><strong data-i18n="nav_about">About</strong></li>
+            <li><a href="copyright.html" data-i18n="nav_copyright">Copyright</a></li>
         </ul>
     </nav>
     <main class="container content-page">
         <article>
             <header>
-                <h1>About This Project</h1>
+                <h1 data-i18n="about_title">About This Project</h1>
             </header>
             <section>
-                <h2>4-7-8 Breathing Exercise App</h2>
-                <p>This web application is designed to guide users through the 4-7-8 breathing technique, a simple yet powerful relaxation exercise that can help reduce anxiety and promote better sleep.</p>
+                <h2 data-i18n="about_subtitle">4-7-8 Breathing Exercise App</h2>
+                <p data-i18n="about_description">This web application is designed to guide users through the 4-7-8 breathing technique, a simple yet powerful relaxation exercise that can help reduce anxiety and promote better sleep.</p>
                 
-                <h3>Features</h3>
+                <h3 data-i18n="features">Features</h3>
                 <ul>
-                    <li>Visual and audio guidance for the 4-7-8 breathing technique</li>
-                    <li>Customizable background sounds for enhanced relaxation</li>
-                    <li>Dark/light theme support</li>
-                    <li>Responsive design for all devices</li>
+                    <li data-i18n="feature_1">Visual and audio guidance for the 4-7-8 breathing technique</li>
+                    <li data-i18n="feature_2">Customizable background sounds for enhanced relaxation</li>
+                    <li data-i18n="feature_3">Dark/light theme support</li>
+                    <li data-i18n="feature_4">Responsive design for all devices</li>
                 </ul>
 
-                <h3>Developer</h3>
-                <p>Created by Patrick CM Serrano</p>
+                <h3 data-i18n="developer">Developer</h3>
+                <p data-i18n="created_by">Created by Patrick CM Serrano</p>
                 
-                <h3>Source Code</h3>
-                <p>This project is open source and available on GitHub. Feel free to contribute, report issues, or fork the repository:</p>
-                <p><a href="https://github.com/patrickcmserrano/breathing-app" target="_blank" rel="noopener">View on GitHub</a></p>
+                <h3 data-i18n="source_code">Source Code</h3>
+                <p data-i18n="source_code_description">This project is open source and available on GitHub. Feel free to contribute, report issues, or fork the repository:</p>
+                <p><a href="https://github.com/patrickcmserrano/breathing-app" target="_blank" rel="noopener" data-i18n="view_on_github">View on GitHub</a></p>
             </section>
         </article>
     </main>

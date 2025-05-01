@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing Exercise App</title>
+    <title data-i18n="page_title">4-7-8 Breathing Exercise</title>
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="4-7-8 Breathing Exercise App">
@@ -23,45 +23,51 @@
 </head>
 <body>
     <div class="background-animation"></div>
+    <div class="language-selector">
+        <div class="language-buttons">
+            <button class="language-button" data-lang="en">English</button>
+            <button class="language-button" data-lang="pt-BR">Português</button>
+        </div>
+    </div>
     <div class="theme-switch">
-        <button id="theme-toggle" class="contrast" aria-label="Switch theme">Switch to dark mode</button>
+        <button id="theme-toggle" class="contrast" aria-label="Switch theme" data-i18n="switch_theme">Switch to dark mode</button>
     </div>
     <nav class="container">
         <ul>
-            <li><strong>Home</strong></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="copyright.html">Copyright</a></li>
+            <li><strong data-i18n="nav_home">Home</strong></li>
+            <li><a href="about.html" data-i18n="nav_about">About</a></li>
+            <li><a href="copyright.html" data-i18n="nav_copyright">Copyright</a></li>
         </ul>
     </nav>
     <main class="container">
         <article>
             <header>
-                <h1>4-7-8 Breathing Exercise</h1>
-                <p>The 4-7-8 breathing technique is a relaxation exercise. Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat 4 times.</p>
+                <h1 data-i18n="page_title">4-7-8 Breathing Exercise</h1>
+                <p data-i18n="page_description">The 4-7-8 breathing technique is a relaxation exercise. Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. Repeat 4 times.</p>
             </header>
-            <div id="instruction" aria-live="polite">Press start to begin</div>
-            <div id="cycle-counter" aria-live="polite">Cycle: 0/4</div>
+            <div id="instruction" aria-live="polite" data-i18n="press_start">Press start to begin</div>
+            <div id="cycle-counter" aria-live="polite" data-i18n="cycle_counter" data-i18n-args="0">Cycle: 0/4</div>
             <div class="control-buttons">
-                <button id="start" class="primary">Start</button>
-                <button id="stop" class="contrast" disabled>Stop</button>
+                <button id="start" class="primary" data-i18n="start">Start</button>
+                <button id="stop" class="contrast" disabled data-i18n="stop">Stop</button>
             </div>
             <div id="progress"></div>
         </article>
     </main>
     <footer class="music-player">
         <div class="sound-controls grid">
-            <label for="background-sound">Background Sound:</label>
+            <label for="background-sound" data-i18n="background_sound">Background Sound:</label>
             <select id="background-sound">
-                <option value="">None</option>
-                <option value="meditation-spiritual-music">Meditation Spiritual Music</option>
-                <option value="middle-east-oriental-music">Middle East Oriental Music</option>
-                <option value="round-of-fairies-quot-irish-harp">Irish Harp</option>
-                <option value="the-voice-of-the-oud">Voice of the Oud</option>
-                <option value="tibetan-singing-bowl">Tibetan Singing Bowl</option>
+                <option value="" data-i18n-option="none">None</option>
+                <option value="meditation-spiritual-music" data-i18n-option="meditation_music">Meditation Spiritual Music</option>
+                <option value="middle-east-oriental-music" data-i18n-option="oriental_music">Middle East Oriental Music</option>
+                <option value="round-of-fairies-quot-irish-harp" data-i18n-option="irish_harp">Irish Harp</option>
+                <option value="the-voice-of-the-oud" data-i18n-option="oud">Voice of the Oud</option>
+                <option value="tibetan-singing-bowl" data-i18n-option="tibetan_bowl">Tibetan Singing Bowl</option>
             </select>
             <div class="button-group">
-                <button id="play-sound" class="secondary" disabled>Play</button>
-                <button id="pause-sound" class="secondary" disabled>Pause</button>
+                <button id="play-sound" class="secondary" disabled data-i18n="play">Play</button>
+                <button id="pause-sound" class="secondary" disabled data-i18n="pause">Pause</button>
             </div>
         </div>
     </footer>
